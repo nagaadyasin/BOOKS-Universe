@@ -78,7 +78,7 @@ export default function StoryMaker() {
     setLoading(true);
     try {
       // ✅ Generate story
-      const res = await fetch("http://localhost:4000/api/story", {
+      const res = await fetch("https://books-universe.onrender.com/api/story", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ theme: promptPreview }),
@@ -88,7 +88,7 @@ export default function StoryMaker() {
       setStory(data.story || "");
 
       // ✅ Generate image
-      const imgRes = await fetch("http://localhost:4000/api/image", {
+      const imgRes = await fetch("https://books-universe.onrender.com/api/image", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: `Illustration of: ${promptPreview}` }),
